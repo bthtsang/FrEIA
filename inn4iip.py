@@ -113,16 +113,16 @@ def prep_directories(args):
 def get_runid(args):
     """ Generate a unique run ID from arguments """
     # Input and network setting
-    runid = f"in{args.input_dims}_cond{args.cond_dims}_\
-              affx{args.num_aff_coupl_blks}_\
-              subnet{args.subnet_nlayers}x{args.subnet_nunits}"
+    runid = f"in{args.input_dims}_cond{args.cond_dims}_"\
+            f"affx{args.num_aff_coupl_blks}_"\
+            f"subnet{args.subnet_nlayers}x{args.subnet_nunits}"
 
     if (args.batch_norm):
       runid += "_batchnorm"
 
     # training parameters
-    runid += f"_bs{args.batch_size}_epochs{args.n_epochs}_\
-               opt{args.optimizer}_lr{args.lr:.1e}_nsamples{args.n_samples}"
+    runid += f"_bs{args.batch_size}_epochs{args.n_epochs}_"\
+             f"opt{args.optimizer}_lr{args.lr:.1e}_nsamples{args.n_samples}"
 
     return runid
 
